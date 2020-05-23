@@ -20,6 +20,16 @@
 #define __VKD3D_WINDOWS_H
 #ifndef _INC_WINDOWS
 
+/* MinGW defines __C89_NAMELESS for its own extension to support this. */
+#if defined(__MINGW32__)
+# ifdef __C89_NAMELESS
+#  undef __C89_NAMELESS
+# endif
+# ifdef __C89_NAMELESSUNIONNAME
+#  undef __C89_NAMELESSUNIONNAME
+# endif
+#endif
+
 /* Nameless unions */
 #ifndef __C89_NAMELESS
 # ifdef NONAMELESSUNION
