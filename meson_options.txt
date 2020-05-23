@@ -1,0 +1,1 @@
+option('enable_demos', type : 'boolean', value : false)
